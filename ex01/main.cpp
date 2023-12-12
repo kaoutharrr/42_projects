@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:56:24 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/12/09 15:06:21 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/12/10 22:39:19 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int main()
 {
-   const  int arr[12] = {1,2,3,4,5,6,7,8,9};
-   // arr = new char[12];
+   int arr[9] = {1,2,3,4,5,6,7,8,9};
   
-   // iter(arr, 12, increment);
-    iter(arr, 12, print);
+  
+  iter(arr, 9, increment);
+  iter(arr, 9, print);
 
 }
+

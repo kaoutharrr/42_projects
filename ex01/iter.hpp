@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:35:03 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/12/09 15:03:44 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/12/10 22:38:31 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define ITER_HPP
 
 #include<iostream>
+
 template <typename T>
 void increment(T& a)
 {
@@ -42,11 +43,6 @@ void iter(T* arr, size_t len, void( *Func)(T &))
 //const 
 
 
-template <typename T>
-void print(const T& a)
-{
-    std :: cout << a << std :: endl;
-}
 
 template <typename T>
 
