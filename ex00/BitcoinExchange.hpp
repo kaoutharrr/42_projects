@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:06:01 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/03 23:26:56 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/04 18:20:04 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ class BitcoinExchange
         BitcoinExchange();
         BitcoinExchange(const BitcoinExchange& other);
         BitcoinExchange& operator=(const BitcoinExchange& other);
-        void addElements(std :: string& date, float value);
+        void addElements(std :: string date, float value);
+
         ~BitcoinExchange();   
 
 };
+
 
 #endif
