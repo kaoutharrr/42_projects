@@ -6,36 +6,95 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 13:18:23 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/04 15:48:07 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/04 22:58:47 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"BitcoinExchange.hpp"
-
-BitcoinExchange :: BitcoinExchange()
+void check(std :: string str)
 {
-}
-
-BitcoinExchange :: BitcoinExchange(const BitcoinExchange& other)
-{
-    *this = other;
-}
-
-BitcoinExchange& BitcoinExchange :: operator=(const BitcoinExchange& other)
-{
-    if(this != &other)
+    const char* line;
+    int count = 0;
+    line = str.c_str();
+    char s[14] =  "aaaa-aa-aa | ";
+    int i = 0;
+    if(str.size() < 14)
+        throw(std :: runtime_error("Error: bad input => "));
+    while(line[i] && s[i])
     {
-        this->data = other.data;
+        if(s[i] == '-' || s[i] == ' ' || s[i] == '|')
+        {
+            if(s[i] != line[i])
+                throw(std :: runtime_error("Error: bad input => "));
+        }
+        else if(!isdigit(line[i]))
+        {
+                throw(std :: runtime_error("Error: bad input => "));
+        }
+        i++;
+        if(i == 13)
+        {
+            if(line[i] == '-')
+                i++;
+            while(line[i])
+            {
+                if(i != 13 && line[i] == '.')
+                {
+                    count++;
+                    if(count > 1)
+                        throw(std :: runtime_error("Error: bad input => "));
+                }
+                else if(!isdigit(line[i]))
+                    throw(std :: runtime_error("Error: bad input => "));
+                i++;
+            }   
+        }
     }
-    return(*this);
 }
 
-void BitcoinExchange :: addElements(std :: string date, float value)
+void fill_map(std :: map <std :: string, float > &data)
 {
-    data.insert(std::make_pair(date, value));
+    float n;
+    std :: string line;
+    std :: ifstream infile("data.csv");
+    if(!infile.is_open())
+        throw(std :: runtime_error("could not open the file\n"));
+    std :: getline(infile, line);
+    while(std :: getline(infile, line))
+    {
+        std :: string s = line.substr(11);
+        n = std :: atof(s.c_str());
+        data.insert(std::make_pair(line.substr(0, 10), n));
+    }
 }
 
-BitcoinExchange :: ~BitcoinExchange()
+void compare(std :: string line, std :: map <std :: string, float > data)
 {
+    std :: string s;
+    s = line.substr(13);
+
+    std :: string date;
+    float value;
+    
+    date = line.substr(0, 10);
+   
+    value = std :: atof(s.c_str());
+    if(value < 0)
+        throw(std :: runtime_error("Error : not a positive number."));
+    if(value > 1000)
+        throw(std :: runtime_error("Error: too large  number."));
+
+    std :: map <std :: string, float >  :: iterator it;
+    it = data.find(date);
+    if(it == data.end()) 
+    {
+        it = data.upper_bound(date);
+        if(it != data.begin())
+            it--;
+        else
+            throw(std :: runtime_error("error invalid input"));
+    }
+    std :: cout << date << " => " << value << " = " << it->second * value << "\n";
+
 
 }

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 11:06:01 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/04 22:59:10 by kkouaz           ###   ########.fr       */
+/*   Created: 2024/01/04 23:00:31 by kkouaz            #+#    #+#             */
+/*   Updated: 2024/01/04 23:20:09 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOIN_EXCHANGE_HPP
-#define BITCOIN_EXCHANGE_HPP
+#include"RPN.hpp"
 
-#include<iostream>
-#include<fstream>
-#include<map>
-#include<string.h>
+int main(int ac, char **av)
+{
+    if(ac < 2)
+    {
+        std :: cerr << "error!\n";
+        return(1);
+    }
+    int i = 0;
+    while(av[i])
+    {
+        if()
+    }
 
-void check(std :: string str);
-void fill_map(std :: map <std :: string, float > &data);
-void compare(std :: string line, std :: map <std :: string, float > data);
-
-
-#endif
+}

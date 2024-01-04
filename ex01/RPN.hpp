@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 11:06:01 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/04 22:59:10 by kkouaz           ###   ########.fr       */
+/*   Created: 2024/01/04 22:13:40 by kkouaz            #+#    #+#             */
+/*   Updated: 2024/01/04 23:05:20 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOIN_EXCHANGE_HPP
-#define BITCOIN_EXCHANGE_HPP
+#ifndef RPN_HPP
+#define RPN_HPP
 
 #include<iostream>
-#include<fstream>
-#include<map>
-#include<string.h>
 
-void check(std :: string str);
-void fill_map(std :: map <std :: string, float > &data);
-void compare(std :: string line, std :: map <std :: string, float > data);
 
 
 #endif
