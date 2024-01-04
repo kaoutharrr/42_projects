@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:38:51 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/04 18:25:30 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/04 22:01:02 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void check(std :: string str)
     }
 }
 
-void fill_map(BitcoinExchange& data)
+void fill_map(std :: map <std :: string, float > &data)
 {
     float n;
     std :: string line;
@@ -65,9 +65,8 @@ void fill_map(BitcoinExchange& data)
     {
         std :: string s = line.substr(11);
         n = std :: atof(s.c_str());
-        data.addElements(line.substr(0, 10), n);
+        data.insert(std::make_pair(line.substr(0, 10), n));
     }
-    
 }
 
 void compare(std :: string line, std :: map <std :: string, float > data)
@@ -79,13 +78,24 @@ void compare(std :: string line, std :: map <std :: string, float > data)
     float value;
     
     date = line.substr(0, 10);
+   
     value = std :: atof(s.c_str());
     if(value < 0)
         throw(std :: runtime_error("Error : not a positive number."));
     if(value > 1000)
         throw(std :: runtime_error("Error: too large  number."));
-    std :: string :: iterator it;
 
-    it = (date);
+    std :: map <std :: string, float >  :: iterator it;
+    it = data.find(date);
+    if(it == data.end()) 
+    {
+        it = data.upper_bound(date);
+        if(it != data.begin())
+            it--;
+        else
+            throw(std :: runtime_error("error invalid input"));
+    }
+    std :: cout << date << " => " << value << " = " << it->second * value << "\n";
+
 
 }

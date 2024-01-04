@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:09:05 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/04 18:11:32 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/04 18:27:44 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 int main(int ac, char **av)
 {
-    BitcoinExchange data;
+    std :: map <std :: string, float > data;
+   
     if(ac > 2)
     {
         std :: cout << "too many arguments :)\n";

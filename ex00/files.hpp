@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:43:59 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/04 16:16:36 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/04 18:48:39 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 
 void check(std :: string str);
-void fill_map(BitcoinExchange& data);
-void compare(std :: string line, BitcoinExchange& data);
+void fill_map(std :: map <std :: string, float > &data);
+void compare(std :: string line, std :: map <std :: string, float > data);
 
 #endif
