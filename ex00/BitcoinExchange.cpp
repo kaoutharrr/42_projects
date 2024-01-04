@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 13:18:23 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/03 13:36:06 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/03 23:36:00 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ BitcoinExchange& BitcoinExchange :: operator=(const BitcoinExchange& other)
 
 void BitcoinExchange :: addElements(std :: string& date, float value)
 {
-    data.insert({date, value});
+    data.insert(std::make_pair(date, value));
 }
 
 BitcoinExchange :: ~BitcoinExchange()
