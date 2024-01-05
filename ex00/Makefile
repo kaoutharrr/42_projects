@@ -6,15 +6,15 @@
 #    By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 18:20:13 by kkouaz            #+#    #+#              #
-#    Updated: 2024/01/04 15:52:58 by kkouaz           ###   ########.fr        #
+#    Updated: 2024/01/05 15:42:56 by kkouaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = btc
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 RM = rm -rf
-SRC = main.cpp BitcoinExchange.cpp files.cpp
+SRC = main.cpp BitcoinExchange.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
