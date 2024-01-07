@@ -6,14 +6,14 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:08:01 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/07 01:56:19 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/07 04:50:02 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
 
-
+#include <unistd.h>
 #include<iostream>
 #include<vector>
 #include<list>
@@ -47,12 +47,12 @@ T copyvec(T v, int begin, int end)
 }
 template<typename T>
 
-T insertionSort(T &v, int begin , int end)
+void insertionSort(T& v, unsigned int begin , unsigned int end)
 {
-    int i = begin;
-     int j = i;
+    unsigned int i = begin;
+     unsigned int j = i;
 
-    while(i < end)
+    while(i < end && i < v.size())
     {
         j = i;
         while(j > begin && v[j - 1] > v[j])
@@ -62,69 +62,70 @@ T insertionSort(T &v, int begin , int end)
         }
         i++;
     }
-    return(v);
 }
 template<typename T>
-T mergeSort(T v, int begin, int end)
+void mergeSort(T &v, int begin, int end)
 {
     T a;
     T b;
 
-
-    a = copyvec(v, begin, (end - begin)/2);
-    b = copyvec(v, (end - begin)/2, end);
+    a = copyvec(v, begin, (end + begin)/2);
+    b = copyvec(v, (end + begin)/2, end);
     unsigned int i = 0;
-   unsigned int j = 0;
+    unsigned int j = 0;
     T res;
     while(i < a.size() && j < b.size())
     {
         if(a[i] < b[j])
         {
-            res.push_back(a[i]);
+            // res.push_back(a[i]);
+            v[begin] = a[i];
             i++;
         }
         else 
         {
-            res.push_back(b[j]);
+            v[begin] = b[j];
+            // res.push_back(b[j]);
             j++;
         }
-
+        begin++;
     }
     while(i < a.size())
     {
-        res.push_back(a[i]);
-        i++;
+        v[begin++] = a[i++];
+        // res.push_back(a[i]);
     }
     while(j < b.size())
     {
-        res.push_back(b[j]);
-        j++;
+        // res.push_back(b[j]);
+        // j++;
+        v[begin++] = b[j++];
     }
-    return(res);
+    // return(res);
 }
 
 template<typename T>
-T sort(T &v, int begin, int end)
+void sort(T& v, int begin, int end)
 {
-    T res;
-    if(end - begin  < 10)
+   T res;
+    if(end - begin  <= 10)
     {
-        v = insertionSort(v, begin, end);
+        insertionSort(v, begin, end);
+    //    exit(0);
     }
     else
     {
-        int m = (end - begin) / 2;
-        v = sort(v,begin, m);
-        v = sort(v, m , end);
-        v  = mergeSort(v, begin, end);
+        int m = (end + begin) / 2;
+        // std::cout << "m = " << m << " s = " << begin << " e = " << end << std::endl;
+        // aff(v);
+        // sleep(1);
+        sort(v,begin, m);
+        sort(v,m, end);
+        mergeSort(v, begin, end);
     }
-    return(v);
+    //return(v);
 }
 
-
-
-//std :: vector<int> mergeSort(std :: vector<int> a, std :: vector<int> b);
-//std :: vector<int> sort(std :: vector<int> v, int begin, int end);
 
 
 

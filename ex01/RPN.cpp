@@ -27,18 +27,22 @@ int calculate(int a, int b, char c)
     if(c == '-')
         return(a-b);
     if(c == '/')
+    {
+        if(b == 0)
+            throw(std :: runtime_error("Er--ror"));
         return(a/b);
+    }
     if(c == '*')
         return(a*b);
     return(0);
     
 }
-void fillStack(char *s, std :: stack<int> &myStack)
+void fillStack(char *k, std :: stack<int> &myStack)
 {
-    int i = 0;
+    unsigned int i = 0;
     int a, b, res;
-
-    while(s[i])
+    std::string s = k;
+    while(i < s.length() - 1)
     {
         while(check_operators(s[i]))
         {
@@ -57,11 +61,12 @@ void fillStack(char *s, std :: stack<int> &myStack)
                 myStack.pop();
                 b = myStack.top();
                 myStack.pop();
+                std::cout << "a = " << b << " " << s[i] <<" b = " << a << std::endl;
                 res = calculate(b, a , s[i]);
                 myStack.push(res);
             }   
             else
-                throw(std :: runtime_error("Errrror"));
+                throw(std :: runtime_error("Error"));
         }
         i++;
     }
@@ -69,4 +74,4 @@ void fillStack(char *s, std :: stack<int> &myStack)
         throw(std :: runtime_error("Error"));
     else
         std :: cout << myStack.top();
-}o
+}

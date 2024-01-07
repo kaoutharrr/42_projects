@@ -41,7 +41,7 @@ void check(std :: string str)
                 if(i != 13 && line[i] == '.')
                 {
                     count++;
-                    if(count > 1)
+                    if(count > 1 || !isdigit(line[i + 1]))
                         throw(std :: runtime_error("Error: bad input => "));
                 }
                 else if(!isdigit(line[i]))
@@ -83,7 +83,11 @@ void compare(std :: string line, std :: map <std :: string, float > data)
         throw(std :: runtime_error("Error : not a positive number."));
     if(value > 1000)
         throw(std :: runtime_error("Error: too large  number."));
-
+    int y = std::atoi(date.substr(0, 4).c_str());
+    int month =  std::atoi(date.substr(5, 7).c_str());
+    int day =  std::atoi(date.substr(8, 10).c_str());
+    if(y == 0 || month >12 || !month || !day || day > 31)
+        throw(std :: runtime_error("Error : invalid date "));
     std :: map <std :: string, float >  :: iterator it;
     it = data.find(date);
     if(it == data.end()) 
