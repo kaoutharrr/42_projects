@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:29:53 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/05 20:37:37 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/06 15:20:46 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,4 @@ void fillStack(char *s, std :: stack<int> &myStack)
         throw(std :: runtime_error("Error"));
     else
         std :: cout << myStack.top();
-}
-
+}o
