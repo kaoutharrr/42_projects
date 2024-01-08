@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 13:18:23 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/04 22:58:47 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/08 00:44:05 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,9 +96,8 @@ void compare(std :: string line, std :: map <std :: string, float > data)
         if(it != data.begin())
             it--;
         else
-            throw(std :: runtime_error("error invalid input"));
+            throw(std :: runtime_error("Error :  invalid input"));
     }
     std :: cout << date << " => " << value << " = " << it->second * value << "\n";
-
 
 }

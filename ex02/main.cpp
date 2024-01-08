@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:08:48 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/07 04:45:38 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/08 00:32:35 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int main(int ac , char **av)
     std :: clock_t v_end;
 
     if(ac < 2)
+    {
+        std :: cerr << "Error !\n";
         return 1;
+    }
     try
     {
         check_digits(av);

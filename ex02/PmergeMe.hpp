@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:08:01 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/07 04:50:02 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/08 00:42:58 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void insertionSort(T& v, unsigned int begin , unsigned int end)
         i++;
     }
 }
+
 template<typename T>
 void mergeSort(T &v, int begin, int end)
 {
@@ -78,14 +79,12 @@ void mergeSort(T &v, int begin, int end)
     {
         if(a[i] < b[j])
         {
-            // res.push_back(a[i]);
             v[begin] = a[i];
             i++;
         }
         else 
         {
             v[begin] = b[j];
-            // res.push_back(b[j]);
             j++;
         }
         begin++;
@@ -93,15 +92,11 @@ void mergeSort(T &v, int begin, int end)
     while(i < a.size())
     {
         v[begin++] = a[i++];
-        // res.push_back(a[i]);
     }
     while(j < b.size())
     {
-        // res.push_back(b[j]);
-        // j++;
         v[begin++] = b[j++];
     }
-    // return(res);
 }
 
 template<typename T>
@@ -111,22 +106,14 @@ void sort(T& v, int begin, int end)
     if(end - begin  <= 10)
     {
         insertionSort(v, begin, end);
-    //    exit(0);
     }
     else
     {
         int m = (end + begin) / 2;
-        // std::cout << "m = " << m << " s = " << begin << " e = " << end << std::endl;
-        // aff(v);
-        // sleep(1);
         sort(v,begin, m);
         sort(v,m, end);
         mergeSort(v, begin, end);
     }
-    //return(v);
 }
-
-
-
 
 #endif

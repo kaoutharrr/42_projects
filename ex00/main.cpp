@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:09:05 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/05 15:48:25 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/08 00:36:23 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int ac, char **av)
    
     if(ac > 2)
     {
-        std :: cout << "too many arguments :)\n";
+        std :: cerr << "too many arguments :)\n";
         return(1);
     }
     std :: ifstream infile(av[1]);
@@ -31,7 +31,6 @@ int main(int ac, char **av)
     {
         std::cerr << e.what() << '\n';
     }
-    
     if(!infile.is_open())
     {
         std :: cerr << "Error: could not open file.\n";
