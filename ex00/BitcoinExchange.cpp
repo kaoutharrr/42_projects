@@ -6,11 +6,12 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 13:18:23 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/08 00:44:05 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/08 21:56:00 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"BitcoinExchange.hpp"
+
 void check(std :: string str)
 {
     const char* line;
@@ -38,7 +39,7 @@ void check(std :: string str)
                 i++;
             while(line[i])
             {
-                if(i != 13 && line[i] == '.')
+                if(i != 13 && (line[i] == '.' || line[i] == ','))
                 {
                     count++;
                     if(count > 1 || !isdigit(line[i + 1]))

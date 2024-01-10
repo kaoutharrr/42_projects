@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:29:53 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/08 00:16:24 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/08 22:06:14 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int calculate(int a, int b, char c)
     if(c == '/')
     {
         if(b == 0)
-            throw(std :: runtime_error("Er--ror"));
+            throw(std :: runtime_error("Error"));
         return(a/b);
     }
     if(c == '*')
@@ -61,7 +61,6 @@ void fillStack(char *k, std :: stack<int> &myStack)
                 myStack.pop();
                 b = myStack.top();
                 myStack.pop();
-                //std::cout << "a = " << b << " " << s[i] <<" b = " << a << std::endl;
                 res = calculate(b, a , s[i]);
                 myStack.push(res);
             }   

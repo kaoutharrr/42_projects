@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 12:08:01 by kkouaz            #+#    #+#             */
-/*   Updated: 2024/01/08 00:42:58 by kkouaz           ###   ########.fr       */
+/*   Updated: 2024/01/09 04:50:24 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void mergeSort(T &v, int begin, int end)
 template<typename T>
 void sort(T& v, int begin, int end)
 {
-   T res;
     if(end - begin  <= 10)
     {
         insertionSort(v, begin, end);
