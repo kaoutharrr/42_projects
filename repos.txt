@@ -1,0 +1,7 @@
+pool|pool|git@github.com:kaoutharrr/pool-1337.git|main
+push_swap|push_swap|git@github.com:kaoutharrr/push_swap.git|main
+so_long|so_long|git@github.com:kaoutharrr/so_long.git|main
+philosophers|philosophers|git@github.com:kaoutharrr/philosophers.git|main
+minishell|minishell|git@github.com:kaoutharrr/minishell_42.git|main
+cub3d|cub3d|git@github.com:kaoutharrr/Cub3d-42.git|main
+inception|inception|git@github.com:kaoutharrr/inception-42.git|main
