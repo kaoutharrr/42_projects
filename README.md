@@ -35,6 +35,11 @@ Focus: graphics, math, raycasting, player movement, and textures.
 A Docker-based infrastructure using multiple containers.  
 Focus: Docker, services, Nginx, WordPress, MariaDB, automation.
 
+### 🔹 **cpp-modules/**
+C++ programming modules covering fundamental to advanced concepts.  
+**cpp00-cpp04**: Classes, encapsulation, inheritance, polymorphism  
+**cpp05-cpp09**: Exceptions, casting, templates, STL containers and algorithms
+
 ---
 
 ## 🛠️ Technologies Used
@@ -58,6 +63,17 @@ philosophers/
 minishell/
 cub3d/
 inception/
+cpp-modules/
+  ├── cpp00/
+  ├── cpp01/
+  ├── cpp02/
+  ├── cpp03/
+  ├── cpp04/
+  ├── cpp05/
+  ├── cpp06/
+  ├── cpp07/
+  ├── cpp08/
+  └── cpp09/
 ```
 
 Each directory contains the original project with its code and history.
@@ -67,5 +83,3 @@ Each directory contains the original project with its code and history.
 ## 📬 Contact
 
 Feel free to check out the individual folders or reach out if you'd like to know more about any project!
-
-

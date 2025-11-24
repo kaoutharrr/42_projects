@@ -15,8 +15,8 @@ while IFS='|' read -r remote folder url branch; do
 
   # Add subtree
   git subtree add --prefix="$folder" "$remote" "$branch"
-done < repos.txt
+done < repos-cpp.txt
 
 echo "======================================"
-echo "All repositories imported successfully!"
+echo "All C++ modules imported successfully!"
 echo "======================================"
