@@ -1,10 +1,1 @@
-cpp00|cpp-modules/cpp00|git@github.com:kaoutharrr/Cpp_00.git|main
-cpp01|cpp-modules/cpp01|git@github.com:kaoutharrr/cpp_01.git|main
-cpp02|cpp-modules/cpp02|git@github.com:kaoutharrr/cpp_02.git|main
-cpp03|cpp-modules/cpp03|git@github.com:kaoutharrr/cpp_03.git|main
-cpp04|cpp-modules/cpp04|git@github.com:kaoutharrr/cpp_04.git|main
-cpp05|cpp-modules/cpp05|git@github.com:kaoutharrr/cpp_05.git|main
-cpp06|cpp-modules/cpp06|git@github.com:kaoutharrr/cpp_06.git|main
-cpp07|cpp-modules/cpp07|git@github.com:kaoutharrr/cpp_07.git|main
-cpp08|cpp-modules/cpp08|git@github.com:kaoutharrr/cpp_08.git|main
 cpp09|cpp-modules/cpp09|git@github.com:kaoutharrr/cpp_09.git|main
